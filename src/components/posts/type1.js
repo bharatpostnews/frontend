@@ -20,7 +20,7 @@ const Type1 = ({ title, featuredImage, slug, excerpt }) => {
               />
             ) : (
               <Image
-                src="https://bharatpostnews.com/wp-content/uploads/2022/03/noimage-def.webp"
+                src="https://wpdata.bharatpostnews.com/wp-content/uploads/2022/03/noimage-def.webp"
                 width={450}
                 height={265}
                 layout="responsive"

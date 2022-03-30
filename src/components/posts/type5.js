@@ -18,7 +18,7 @@ function Type5({ featuredImage, title, excerpt, slug }) {
               />
             ) : (
               <Image
-                src="https://bharatpostnews.com/wp-content/uploads/2022/03/noimage-def.webp"
+                src="https://wpdata.bharatpostnews.com/wp-content/uploads/2022/03/noimage-def.webp"
                 height={800}
                 width={1300}
                 className="rounded"

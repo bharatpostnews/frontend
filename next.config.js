@@ -5,6 +5,6 @@ const nextConfig = {
 
 module.exports = {
   images: {
-    domains: ["bharatpostnews.com"],
+    domains: ["wpdata.bharatpostnews.com"],
   },
 };

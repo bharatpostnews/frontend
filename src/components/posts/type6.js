@@ -19,7 +19,7 @@ function Type6({ featuredImage, title, excerpt, slug }) {
               />
             ) : (
               <Image
-                src="https://bharatpostnews.com/wp-content/uploads/2022/03/noimage-def.webp"
+                src="https://wpdata.bharatpostnews.com/wp-content/uploads/2022/03/noimage-def.webp"
                 height={200}
                 width={250}
                 className="rounded"
