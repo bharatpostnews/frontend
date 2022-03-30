@@ -1,0 +1,80 @@
+import { useQuery, gql } from "@apollo/client";
+
+const FETCH_ALL = gql`
+  query MyQuery($first: Int!, $after: String) {
+    posts(first: $first, after: $after) {
+      edges {
+        node {
+          title
+        }
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
+  }
+`;
+
+export default function LoadMoreList() {
+  const { data, loading, error, fetchMore } = useQuery(FETCH_ALL, {
+    variables: { first: 5, after: null },
+    notifyOnNetworkStatusChange: true,
+  });
+  if (error) {
+    console.log(error);
+    return <p>Sorry, an error has occurred. Please reload the page.</p>;
+  }
+
+  if (!data && loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (!data?.posts.edges.length) {
+    return <p>No posts have been published.</p>;
+  }
+  console.log("initaldata", data?.posts?.edges);
+  const postdata = data?.posts?.edges;
+  const { hasNextPage, endCursor } = data?.posts?.pageInfo;
+
+  return (
+    <>
+      <div>
+        <h2>hello</h2>
+        {postdata.map((node, index) => {
+          {
+            return (
+              <div key={index}>
+                <h1 className="mb-3 text-xl ">{node?.node?.title}</h1>
+              </div>
+            );
+          }
+        })}
+      </div>
+      {hasNextPage ? (
+        <form
+          method="post"
+          onSubmit={(e) => {
+            console.log("endcursor", endCursor);
+            e.preventDefault();
+            fetchMore({
+              variables: { after: endCursor },
+            });
+          }}
+        >
+          <button
+            type="submit"
+            disabled={loading}
+            className="p-5 text-xl bg-red-400"
+          >
+            {loading ? "Loading..." : "Load more"}
+          </button>
+        </form>
+      ) : (
+        <p>✅ All posts loaded.</p>
+      )}
+    </>
+  );
+}
+
+-------------------------------------------------
