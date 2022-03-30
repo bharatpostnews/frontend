@@ -41,8 +41,8 @@ function SidepostSuggestion({ catg }) {
   if (!data && loading) {
     console.log("loading now ...", loading);
   }
-  console.log("data fetch", data);
-  console.log("post copy of data", sidePost);
+  // console.log("data fetch", data);
+  // console.log("post copy of data", sidePost);
 
   return (
     <div className="px-3">
