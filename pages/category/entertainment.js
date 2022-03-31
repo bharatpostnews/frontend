@@ -30,6 +30,7 @@ const FETCH_ALL = gql`
 `;
 function India({ LinksFetch, navLinks }) {
   const { data, loading, error, fetchMore } = useQuery(FETCH_ALL, {
+    fetchPolicy: "network-only",
     variables: { first: 3, endCus: null, catname: "entertainment" },
     notifyOnNetworkStatusChange: true,
   });
