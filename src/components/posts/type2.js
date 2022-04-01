@@ -7,8 +7,8 @@ const Type2 = ({ title, featuredImage, slug }) => {
   return (
     <Link href={`/news/${slug}`}>
       <a>
-        <div className="">
-          <div className="mb-1">
+        <div className="flex flex-row-reverse lg:flex-col border-b-2 py-4 lg:py-0 lg:border-0">
+          <div className="lg:mb-1 w-4/12 lg:w-full">
             {featuredImage ? (
               <Image
                 src={featuredImage?.node?.sourceUrl}
@@ -26,7 +26,7 @@ const Type2 = ({ title, featuredImage, slug }) => {
               />
             )}
           </div>
-          <h2 className=" text-xl font-medium font-hd text-third2">
+          <h2 className=" lg:text-xl font-semibold lg:font-medium font-hd text-third2 w-8/12 lg:w-full">
             {title.substring(0, 90)}
           </h2>
         </div>

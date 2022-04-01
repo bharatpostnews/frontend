@@ -30,7 +30,7 @@ const Type1 = ({ title, featuredImage, slug, excerpt }) => {
           </div>
           <div>
             {excerpt && (
-              <p className=" font-bd2 font-medium text-xl text-extra ">
+              <p className=" font-bd2 font-medium text-xl text-extra lg:p-0 pb-4 ">
                 {excerpt.substring(3, 160) + "..."}
               </p>
             )}

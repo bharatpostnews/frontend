@@ -7,7 +7,7 @@ function Type5({ featuredImage, title, excerpt, slug }) {
   return (
     <Link href={`/news/${slug}`}>
       <a>
-        <div className="flex justify-between bg-primary py-10 container px-9 rounded ">
+        <div className="container flex flex-col lg:flex-row justify-between bg-primary p-5 lg:py-10 lg:px-9 rounded ">
           <div className="">
             {featuredImage ? (
               <Image
@@ -25,11 +25,11 @@ function Type5({ featuredImage, title, excerpt, slug }) {
               />
             )}
           </div>
-          <div className="px-10">
-            <h2 className="text-4xl font-semibold font-hd text-white mb-5">
+          <div className="lg:px-10">
+            <h2 className="lg:text-4xl text-2xl font-semibold font-hd text-white lg:mb-5 lg:py-0 py-3">
               {title}
             </h2>
-            <p className="font-bd2 font-medium text-2xl text-extra">
+            <p className="font-bd2 font-medium lg:text-2xl text-lg text-extra">
               {newExcerpt[3].substring(0, 200) + "..."}
             </p>
           </div>

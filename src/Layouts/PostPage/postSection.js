@@ -33,15 +33,15 @@ function PostSection({ final }) {
   return (
     <div className="border-b-4 border-third mb-4 pb-10">
       {/* title of news */}
-      <div className="text-4xl font-semibold font-hd text-third2 mb-3">
+      <div className="lg:text-4xl text-3xl font-semibold font-hd text-third2 mb-3">
         <h1>{title}</h1>
       </div>
       {/* excerpt */}
-      <div className=" font-bd2 font-medium text-2xl text-extra mb-1">
+      <div className=" font-bd2 font-medium lg:text-2xl text-xl text-extra mb-1">
         <p>{excerpt && modifiedexcerpt[3]}</p>
       </div>
       {/* featured Image */}
-      <div className="mb-3">
+      <div className="lg:mb-3 py-5">
         {featuredImage ? (
           <Image
             src={featuredImage?.node?.sourceUrl}
@@ -60,9 +60,9 @@ function PostSection({ final }) {
         )}
       </div>
       {/* author name, post time , social icons */}
-      <div className="flex mb-7 justify-between items-center">
-        <div>
-          <div className="flex justify-start items-center mb-2 gap-2">
+      <div className="flex lg:flex-row flex-col mb-7 justify-between lg:items-center lg:gap-0 gap-3">
+        <div className="flex lg:flex-col flex-row gap-2">
+          <div className="flex justify-start items-center gap-2">
             <BsPersonCircle className="text-2xl text-extra" />
             {author?.node?.name}
           </div>

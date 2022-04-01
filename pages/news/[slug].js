@@ -15,13 +15,13 @@ export default function PostPageMain({ final, LinksFetch, navLinks }) {
       {/* whole main body wrapper */}
       <div className="container mx-auto mt-10">
         {/* 2 columns wrapper */}
-        <div className=" mx-40 flex justify-between">
+        <div className=" lg:mx-40 flex flex-col lg:flex-row justify-between">
           {/* colums left */}
-          <div className="w-8/12  px-3 border-r-4 border-extra">
+          <div className="lg:w-8/12 px-3 lg:border-r-4 border-extra">
             <PostSection final={final} />
           </div>
           {/* column right */}
-          <div className="w-4/12  px-3">
+          <div className="lg:w-4/12  px-3">
             <Adpostpage />
             <SidepostSuggestion
               catg={final?.post?.categories?.nodes[0]?.slug}

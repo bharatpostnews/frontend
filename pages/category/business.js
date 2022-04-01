@@ -56,11 +56,11 @@ function India({ LinksFetch, navLinks }) {
           <HeaderFinal LinksFetch={LinksFetch} navLinks={navLinks} />
         </div>
         {/* main content area */}
-        <div className="mx-40">
+        <div className="lg:mx-40">
           {/* heading of categories */}
           <div className="container mb-10 mt-20 ">
             <div className="">
-              <p className="font-hd text-2xl font-semibold text-secondry  ">
+              <p className="font-hd text-2xl font-semibold text-secondry lg:px-0 px-2">
                 व्यापार से सभी समाचार
               </p>
               <p className="border-b-4 border-extra  "></p>

@@ -16,9 +16,9 @@ function MainHerofinal({ heroPostsFetch, latestPosts }) {
   return (
     <div className="container mx-auto mt-10 ">
       {/* -Container wrapping two colums */}
-      <div className=" mx-40 flex justify-between ">
+      <div className=" lg:mx-40 flex flex-col lg:flex-row justify-between border-b-4 border-third ">
         {/* - - Column Left */}
-        <div className="w-8/12  ">
+        <div className="lg:w-8/12  ">
           {/* Hero Posts */}
           <LeftColPosts
             postLatestFetch1={postLatestFetch1}
@@ -28,7 +28,7 @@ function MainHerofinal({ heroPostsFetch, latestPosts }) {
           />
         </div>
         {/* - - Column Right */}
-        <div className="w-4/12 bg-green-800  ">
+        <div className="lg:w-4/12 border-l-4 border-third">
           <RightColPosts
             postHeroFetch3={postHeroFetch3}
             postLatestFetch3={postLatestFetch3}

@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Logo() {
   return (
-    <div className="">
+    <div className="mx-auto ">
       <Link href="/">
         <a>
           <p className="font-head text-5xl font-bold text-center ">

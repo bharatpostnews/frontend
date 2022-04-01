@@ -6,9 +6,9 @@ import { navigationLinks } from "../../src/lib/queries/navMenu";
 import Type5 from "../../src/components/posts/type5";
 import Type6 from "../../src/components/posts/type6";
 
-const FETCH_ALL = gql`
-  query postbyCategory($first: Int, $endCus: String, $catname: String) {
-    posts(first: $first, after: $endCus, where: { categoryName: $catname }) {
+const postLatestALL = gql`
+  query latestposts($first: Int, $endCus: String) {
+    posts(first: $first, after: $endCus) {
       pageInfo {
         endCursor
         hasNextPage
@@ -29,9 +29,9 @@ const FETCH_ALL = gql`
   }
 `;
 function India({ LinksFetch, navLinks }) {
-  const { data, loading, error, fetchMore } = useQuery(FETCH_ALL, {
+  const { data, loading, error, fetchMore } = useQuery(postLatestALL, {
     fetchPolicy: "network-only",
-    variables: { first: 3, endCus: null, catname: "entertainment" },
+    variables: { first: 10, endCus: null },
     notifyOnNetworkStatusChange: true,
   });
   if (error) {
@@ -60,8 +60,8 @@ function India({ LinksFetch, navLinks }) {
           {/* heading of categories */}
           <div className="container mb-10 mt-20 ">
             <div className="">
-              <p className="font-hd text-2xl font-semibold text-secondry lg:px-0 px-2 ">
-                मनोरंजन से सभी समाचार
+              <p className="font-hd text-2xl font-semibold text-secondry  ">
+                ताजा खबरें
               </p>
               <p className="border-b-4 border-extra  "></p>
             </div>

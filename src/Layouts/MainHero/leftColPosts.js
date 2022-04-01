@@ -9,16 +9,16 @@ function LeftColPosts({
   postHeroFetch2,
 }) {
   return (
-    <div className="flex gap-3 px-3 border-third border-b-4">
+    <div className="flex flex-col lg:flex-row gap-3 px-3 border-third border-b-4">
       {/* - - - Left Col, Left part Wrapper */}
-      <div className="w-3/5 ">
+      <div className="lg:w-3/5 ">
         {/* - - - - normal wrap */}
         <div>
           {/* loop starts here to assing post  */}
           {postLatestFetch1.map((nodes, i) => {
             if (postHeroFetch1[i]?.postSelection?.postSelector) {
               return (
-                <div className="mb-16" key={i}>
+                <div className="lg:mb-16 mb-5" key={i}>
                   <Type1
                     title={
                       postHeroFetch1[i]?.postSelection?.postSelector?.title
@@ -36,7 +36,7 @@ function LeftColPosts({
               );
             } else {
               return (
-                <div className="mb-16" key={i}>
+                <div className="lg:mb-16 mb-5" key={i}>
                   <Type1
                     title={nodes?.title}
                     excerpt={nodes?.excerpt}
@@ -50,13 +50,13 @@ function LeftColPosts({
         </div>
       </div>
       {/* - - - Left col,Right part Wrapper */}
-      <div className="w-2/5 ">
+      <div className="lg:w-2/5 ">
         {/* - - - - normal wrap */}
         <div>
           {postLatestFetch2.map((nodes, i) => {
             if (postHeroFetch2[i]?.postSelection?.postSelector) {
               return (
-                <div className="mb-12 " key={i}>
+                <div className="lg:mb-12 " key={i}>
                   <Type2
                     featuredImage={
                       postHeroFetch1[i]?.postSelection?.postSelector
@@ -71,7 +71,7 @@ function LeftColPosts({
               );
             } else {
               return (
-                <div className="mb-12" key={i}>
+                <div className="lg:mb-12" key={i}>
                   <Type2
                     featuredImage={nodes?.featuredImage}
                     slug={nodes?.slug}

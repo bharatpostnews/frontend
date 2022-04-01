@@ -8,8 +8,8 @@ function Type6({ featuredImage, title, excerpt, slug }) {
   return (
     <Link href={`/news/${slug}`}>
       <a>
-        <div className="flex justify-between m-5 border-2 border-third rounded p-5 hover:shadow-md ">
-          <div className="w-3/12">
+        <div className="flex lg:justify-between m-5 border-2 border-third rounded p-5 hover:shadow-md lg:gap-0 gap-3 ">
+          <div className="lg:w-3/12">
             {featuredImage ? (
               <Image
                 src={featuredImage?.node?.sourceUrl}
@@ -26,11 +26,11 @@ function Type6({ featuredImage, title, excerpt, slug }) {
               />
             )}
           </div>
-          <div className="w-9/12">
-            <h2 className="font-hd font-semibold text-2xl text-third2 mb-2">
+          <div className="lg:w-9/12">
+            <h2 className="font-hd font-semibold lg:text-2xl text-lg text-third2 mb-2">
               {title}
             </h2>
-            <p className="font-bd2 font-medium text-extra text-lg">
+            <p className="font-bd2 font-medium text-extra text-lg hidden lg:block">
               {newExcerpt[3].substring(0, 250) + "..."}
             </p>
           </div>
