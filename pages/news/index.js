@@ -3,7 +3,6 @@ import { gql, useQuery } from "@apollo/client";
 import HeaderFinal from "../../src/Layouts/Header/headerFinal";
 import { socialLinks } from "../../src/lib/queries/socialLinks";
 import { navigationLinks } from "../../src/lib/queries/navMenu";
-import Type5 from "../../src/components/posts/type5";
 import Type6 from "../../src/components/posts/type6";
 
 const postLatestALL = gql`
