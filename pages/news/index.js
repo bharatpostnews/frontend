@@ -17,7 +17,6 @@ const postLatestALL = gql`
         node {
           slug
           title
-          excerpt
           featuredImage {
             node {
               sourceUrl
@@ -31,7 +30,7 @@ const postLatestALL = gql`
 function India({ LinksFetch, navLinks }) {
   const { data, loading, error, fetchMore } = useQuery(postLatestALL, {
     fetchPolicy: "network-only",
-    variables: { first: 10, endCus: null },
+    variables: { first: 12, endCus: null },
     notifyOnNetworkStatusChange: true,
   });
   if (error) {
@@ -63,40 +62,26 @@ function India({ LinksFetch, navLinks }) {
               <p className="font-hd text-2xl font-semibold text-secondry  ">
                 ताजा खबरें
               </p>
-              <p className="border-b-4 border-extra  "></p>
+              <p className="border-b-2 border-third  "></p>
             </div>
           </div>
           {/* main body area - having 2 columns */}
-          <div className="flex justify-between ">
+          <div className="">
             {/* post content left */}
             <div className="  ">
               {/* post content - posts */}
               <div>
                 {postdata.map((node, index) => {
                   {
-                    if (index === 0) {
-                      return (
-                        <div key={index}>
-                          <Type5
-                            featuredImage={node?.node?.featuredImage}
-                            title={node?.node?.title}
-                            excerpt={node?.node?.excerpt}
-                            slug={node?.node?.slug}
-                          />
-                        </div>
-                      );
-                    } else {
-                      return (
-                        <div key={index}>
-                          <Type6
-                            featuredImage={node?.node?.featuredImage}
-                            title={node?.node?.title}
-                            excerpt={node?.node?.excerpt}
-                            slug={node?.node?.slug}
-                          />
-                        </div>
-                      );
-                    }
+                    return (
+                      <div key={index}>
+                        <Type6
+                          featuredImage={node?.node?.featuredImage}
+                          title={node?.node?.title}
+                          slug={node?.node?.slug}
+                        />
+                      </div>
+                    );
                   }
                 })}
               </div>
