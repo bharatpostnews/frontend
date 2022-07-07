@@ -21,7 +21,10 @@ export default function PostPageMain({ final, LinksFetch, navLinks }) {
           content={`https://www.bharatpostnews.com/news/${final?.post.slug}`}
         />
 
-        <meta property="og:image" content={final?.post.featuredImage} />
+        <meta
+          property="og:image"
+          content={final?.post?.featuredImage?.node?.sourceUrl}
+        />
       </Head>
       <HeaderFinal LinksFetch={LinksFetch} navLinks={navLinks} />
       {/* whole main body wrapper */}
