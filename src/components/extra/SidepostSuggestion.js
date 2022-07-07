@@ -1,10 +1,9 @@
 import React from "react";
-import Type3 from "../posts/type3";
-import Type4 from "../posts/type4";
+import Type9 from "../posts/type9sidesuggest";
 import { gql, useQuery, useLazyQuery } from "@apollo/client";
 import { useEffect, useState } from "react";
 
-function SidepostSuggestion({ catg }) {
+function SidepostSuggestion({ catg, catg2 }) {
   const [sidePost, setSidePost] = useState({});
   const query = gql`
     query postbyCategory($nameofcat: String) {
@@ -47,16 +46,23 @@ function SidepostSuggestion({ catg }) {
   return (
     <div className="px-3">
       <div>
-        <p className="text-secondry text-2xl font-semibold mb-2">
-          {catg} की ताजा खबरें
+        <p className="text-secondry text-2xl font-semibold mb-2 lg:mx-40">
+          {catg2} की ताजा खबरें
         </p>
-        <p className="border-b-4 border-extra mb-7"></p>
       </div>
-      <div>
-        {/* <Type4 postvalue={sidePost?.posts?.nodes[0]} />
-        <Type3 postvalue={sidePost?.posts?.nodes[1]} />
-        <Type3 postvalue={sidePost?.posts?.nodes[2]} />
-        <Type3 postvalue={sidePost?.posts?.nodes[3]} /> */}
+      <div className="flex lg:flex-row flex-col lg:mx-40 bg-primary  ">
+        <div className="px-3 flex-1 hover:bg-primaryshade py-5 ">
+          <Type9 postvalue={sidePost?.posts?.nodes[0]} />
+        </div>
+        <div className="px-3 flex-1 hover:bg-primaryshade py-5">
+          <Type9 postvalue={sidePost?.posts?.nodes[1]} />
+        </div>
+        <div className="px-3 flex-1 hover:bg-primaryshade py-5">
+          <Type9 postvalue={sidePost?.posts?.nodes[2]} />
+        </div>
+        <div className="px-3 flex-1 hover:bg-primaryshade py-5">
+          <Type9 postvalue={sidePost?.posts?.nodes[3]} />
+        </div>
       </div>
     </div>
   );

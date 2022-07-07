@@ -26,7 +26,7 @@ const Type2 = ({ title, featuredImage, slug }) => {
               />
             )}
           </div>
-          <h2 className=" lg:text-xl font-semibold lg:font-medium font-hd text-third2 w-8/12 lg:w-full">
+          <h2 className=" lg:text-xl font-semibold lg:font-medium font-hd text-third2 w-8/12 lg:w-full hover:text-texthover ">
             {title.substring(0, 90)}
           </h2>
         </div>

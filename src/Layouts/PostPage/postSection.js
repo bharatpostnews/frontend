@@ -3,26 +3,15 @@ import Image from "next/image";
 import { BsPersonCircle, BsClockFill } from "react-icons/bs";
 import PostSocialShare from "../../components/extra/postSocialShare";
 function PostSection({ final }) {
-  const {
-    title,
-    excerpt,
-    content,
-    date,
-    slug,
-    featuredImage,
-    categories,
-    author,
-  } = final?.post;
-  /// excerpt filtering
-  const modifiedexcerpt = excerpt.split(/[<p>]/);
-  /// date filtering
+  const { title, content, date, slug, featuredImage, categories, author } =
+    final?.post;
   const date2 = date.split(/[-,T]/);
   const modifieddate = `${date2[2]}-${date2[1]}-${date2[0]}`;
   let content2 = content.replace(/\n/g, "<br />");
 
   //////// pasing social sharing links
   const postsharinglinks = {
-    facebook: `https://www.facebook.com/sharer.php?u=[https://bharatpostnews.com/news/${slug}]`,
+    facebook: `https://www.facebook.com/sharer/sharer.php?u=https://bharatpostnews.com/news/${slug}`,
     twitter: `https://twitter.com/share?url=[https://bharatpostnews.com/news/${slug}]&text=[${title}]
 `,
     telegram: `https://t.me/share/url?url={https://bharatpostnews.com/news/${slug}}&text={${title}}`,
@@ -31,14 +20,10 @@ function PostSection({ final }) {
   };
 
   return (
-    <div className="border-b-4 border-third mb-4 pb-10">
+    <div className="border-b-2 border-third mb-4 pb-10">
       {/* title of news */}
       <div className="lg:text-4xl text-3xl font-semibold font-hd text-third2 mb-3">
         <h1>{title}</h1>
-      </div>
-      {/* excerpt */}
-      <div className=" font-bd2 font-medium lg:text-2xl text-xl text-extra mb-1">
-        <p>{excerpt && modifiedexcerpt[3]}</p>
       </div>
       {/* featured Image */}
       <div className="lg:mb-3 py-5">
@@ -78,7 +63,7 @@ function PostSection({ final }) {
       {/* post content */}
       <div
         dangerouslySetInnerHTML={{ __html: content }}
-        className="font-bd2 font-medium text-xl text-third2"
+        className="font-bd2 font-normal text-xl text-third2"
       ></div>
     </div>
   );

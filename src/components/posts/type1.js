@@ -2,12 +2,12 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const Type1 = ({ title, featuredImage, slug, excerpt }) => {
+const Type1 = ({ title, featuredImage, slug }) => {
   return (
     <Link href={`/news/${slug}`}>
       <a>
-        <div className="">
-          <h2 className=" text-2xl font-semibold font-hd text-third2 mb-2">
+        <div className="hover:text-texthover mb-10">
+          <h2 className=" lg:text-2xl text-xl font-semibold font-hd text-third2 mb-2 hover:text-texthover ">
             {title.substring(0, 90)}
           </h2>
           <div className="mb-2">
@@ -17,6 +17,7 @@ const Type1 = ({ title, featuredImage, slug, excerpt }) => {
                 width={450}
                 height={265}
                 layout="responsive"
+                className=""
               />
             ) : (
               <Image
@@ -26,13 +27,6 @@ const Type1 = ({ title, featuredImage, slug, excerpt }) => {
                 layout="responsive"
                 priority
               />
-            )}
-          </div>
-          <div>
-            {excerpt && (
-              <p className=" font-bd2 font-medium text-xl text-extra lg:p-0 pb-4 ">
-                {excerpt.substring(3, 160) + "..."}
-              </p>
             )}
           </div>
         </div>

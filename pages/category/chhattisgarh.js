@@ -3,7 +3,6 @@ import { gql, useQuery } from "@apollo/client";
 import HeaderFinal from "../../src/Layouts/Header/headerFinal";
 import { socialLinks } from "../../src/lib/queries/socialLinks";
 import { navigationLinks } from "../../src/lib/queries/navMenu";
-import Type5 from "../../src/components/posts/type5";
 import Type6 from "../../src/components/posts/type6";
 
 const FETCH_ALL = gql`
@@ -17,7 +16,6 @@ const FETCH_ALL = gql`
         node {
           slug
           title
-          excerpt
           featuredImage {
             node {
               sourceUrl
@@ -63,40 +61,26 @@ function India({ LinksFetch, navLinks }) {
               <p className="font-hd text-2xl font-semibold text-secondry lg:px-0 px-2">
                 छत्तीसगढ़ से सभी समाचार
               </p>
-              <p className="border-b-4 border-extra  "></p>
+              <p className="border-b-2 border-third  "></p>
             </div>
           </div>
           {/* main body area - having 2 columns */}
-          <div className="flex justify-between ">
+          <div className="">
             {/* post content left */}
             <div className="  ">
               {/* post content - posts */}
-              <div>
+              <div className="grid lg:grid-cols-2 gap-10 mb-20 lg:px-0 px-3">
                 {postdata.map((node, index) => {
                   {
-                    if (index === 0) {
-                      return (
-                        <div key={index}>
-                          <Type5
-                            featuredImage={node?.node?.featuredImage}
-                            title={node?.node?.title}
-                            excerpt={node?.node?.excerpt}
-                            slug={node?.node?.slug}
-                          />
-                        </div>
-                      );
-                    } else {
-                      return (
-                        <div key={index}>
-                          <Type6
-                            featuredImage={node?.node?.featuredImage}
-                            title={node?.node?.title}
-                            excerpt={node?.node?.excerpt}
-                            slug={node?.node?.slug}
-                          />
-                        </div>
-                      );
-                    }
+                    return (
+                      <div key={index}>
+                        <Type6
+                          featuredImage={node?.node?.featuredImage}
+                          title={node?.node?.title}
+                          slug={node?.node?.slug}
+                        />
+                      </div>
+                    );
                   }
                 })}
               </div>

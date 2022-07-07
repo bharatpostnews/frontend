@@ -7,7 +7,7 @@ function HomeCat({ val, val2 }) {
   return (
     <div className="lg:mx-40 py-10 lg:px-0 px-3">
       {/* category header */}
-      <div className="flex justify-between border-b-2 border-extra items-center py-2 ">
+      <div className="flex justify-between border-b-2 border-extra items-center py-2 mb-10">
         <div className="">
           <p className="font-semibold text-4xl text-secondry">{val2[0]}</p>
         </div>
@@ -28,7 +28,7 @@ function HomeCat({ val, val2 }) {
           </p>
         </div>
       ) : (
-        <div className="flex lg:flex-row flex-col gap-10">
+        /*         <div className="flex lg:flex-row flex-col gap-10">
           <div className="flex flex-col gap-5">
             <div className="border-b-2 border-third py-5">
               <Type7 content={val?.posts?.nodes[1]} />
@@ -48,6 +48,28 @@ function HomeCat({ val, val2 }) {
             </div>
             <div className="border-b-2 border-third py-5">
               <Type7 content={val?.posts?.nodes[4]} />
+            </div>
+          </div>
+        </div> */
+
+        <div>
+          <div className="grid lg:grid-cols-5 gap-10">
+            <div className="lg:col-span-2">
+              <Type8 content={val?.posts?.nodes[0]} />
+            </div>
+            <div className=" lg:col-span-3 grid grid-row-4 gap-4">
+              <div>
+                <Type7 content={val?.posts?.nodes[1]} />
+              </div>
+              <div>
+                <Type7 content={val?.posts?.nodes[2]} />
+              </div>
+              <div>
+                <Type7 content={val?.posts?.nodes[3]} />
+              </div>
+              <div>
+                <Type7 content={val?.posts?.nodes[4]} />
+              </div>
             </div>
           </div>
         </div>

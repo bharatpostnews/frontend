@@ -1,3 +1,4 @@
+import Head from "next/head";
 // --> Header Imports
 import HeaderFinal from "../src/Layouts/Header/headerFinal";
 import { navigationLinks } from "../src/lib/queries/navMenu";
@@ -26,6 +27,23 @@ export default function Home({
 }) {
   return (
     <>
+      <Head>
+        <title>Bharat Post News - Chhattisgarh Smachar</title>
+        <meta property="og:title" content="Bharat Post News" key="ogtitle" />
+        <meta
+          property="og:description"
+          content="Chhattisgarh Hindi News and Daily Samachar"
+          key="ogdesc"
+        />
+        <link rel="shortcut icon" href="/faviconpng.png" />
+
+        <meta property="og:url" content="https://www.bharatpostnews.com/" />
+
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/bharat-post-news/images/v1649162930/Images/BPN/The-Bharat-Post-20220405_181706/The-Bharat-Post-20220405_181706.jpg"
+        />
+      </Head>
       <HeaderFinal LinksFetch={LinksFetch} navLinks={navLinks} />
       <MainHerofinal
         heroPostsFetch={heroPostsFetch}

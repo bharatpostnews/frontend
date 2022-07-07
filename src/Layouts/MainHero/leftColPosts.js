@@ -9,14 +9,20 @@ function LeftColPosts({
   postHeroFetch2,
 }) {
   return (
-    <div className="flex flex-col lg:flex-row gap-3 px-3 border-third border-b-4">
+    <div className="flex flex-col lg:flex-row lg:px-0 px-3 border-third ">
       {/* - - - Left Col, Left part Wrapper */}
-      <div className="lg:w-3/5 ">
+      <div className="lg:w-3/5 lg:pr-7 ">
         {/* - - - - normal wrap */}
         <div>
           {/* loop starts here to assing post  */}
           {postLatestFetch1.map((nodes, i) => {
-            if (postHeroFetch1[i]?.postSelection?.postSelector) {
+            /*             if (postHeroFetch1[i]?.postSelection?.postSelector) {
+              console.log(
+                "if option triggered in left-left-col" +
+                  postHeroFetch1[i]?.postSelection?.postSelector?.title +
+                  "2nd title" +
+                  nodes?.title
+              );
               return (
                 <div className="lg:mb-16 mb-5" key={i}>
                   <Type1
@@ -34,23 +40,22 @@ function LeftColPosts({
                   />
                 </div>
               );
-            } else {
-              return (
-                <div className="lg:mb-16 mb-5" key={i}>
-                  <Type1
-                    title={nodes?.title}
-                    excerpt={nodes?.excerpt}
-                    featuredImage={nodes?.featuredImage}
-                    slug={nodes?.slug}
-                  />
-                </div>
-              );
-            }
+            }  */
+            return (
+              <div className="lg:mb-16 mb-5" key={i}>
+                <Type1
+                  title={nodes?.title}
+                  excerpt={nodes?.excerpt}
+                  featuredImage={nodes?.featuredImage}
+                  slug={nodes?.slug}
+                />
+              </div>
+            );
           })}
         </div>
       </div>
       {/* - - - Left col,Right part Wrapper */}
-      <div className="lg:w-2/5 ">
+      <div className="lg:w-2/5 lg:pr-7">
         {/* - - - - normal wrap */}
         <div>
           {postLatestFetch2.map((nodes, i) => {
